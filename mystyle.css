@@ -1,0 +1,121 @@
+
+@import url("//cdn.web-fonts.ge/fonts/arial-geo-bold/css/arial-geo-bold.min.css");
+
+
+/* გარე დივი */
+.anime-extention{
+    font-family: "ALK Tall Nusxuri", sans-serif !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+/* ზედა ლეიერზე დასმული ჩარჩო */
+.anime-extention .banner{
+    position: absolute !important;
+    z-index: 999999 !important;
+    width: 260px !important;
+    top: 400px !important;
+    left: 10px !important;
+    height: 540px !important;
+    background: #ee4a94b4!important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 30px #ee4a94 !important;
+    backdrop-filter: blur(2.3px) !important;
+    border: 1px solid rgba(255, 35, 249, 0.3) !important;
+    
+}
+/* სათაური */
+.anime-extention h1{
+    width: 100% !important;
+    margin-top:  50px !important;
+    margin-bottom:  20px !important;
+    font-size: 30px !important;
+    backdrop-filter: 0 !important;
+    letter-spacing: 3px !important;
+    color: black !important;
+    font-weight: 400 !important;
+    text-align: center !important;
+    filter: brightness(0.9) !important;
+}
+
+/* ფოტოები */
+.anime-extention img{
+    filter: grayscale(100%) !important;
+    width: 128px !important;
+    height: 128px !important;
+    transition: 0.4s !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: auto!important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    border-radius: 50% !important;
+}
+/* ფოტოზე მაუსის მიტანისას */
+.anime-extention img:hover{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    /* background-color: red !important; */
+    padding: 20px !important;
+    filter: grayscale(0%) !important;
+    cursor: pointer !important;
+    
+}
+/* პოპაპი */
+.anime-extention .popup{
+    height: 100px !important;
+    width: 300px !important;
+    filter: brightness(0.9) contrast(1.9) ;  
+    color: rgb(21, 5, 201) !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    display: none !important;
+    position: absolute !important;
+    z-index: 100 !important;
+    font-size: 35px !important;
+    font-weight: bold !important;
+    line-height: 10px !important;
+    padding: 10px !important;
+    margin-top: 20px !important;
+    margin-left: 210px !important;
+    border-radius: 20px !important;
+    overflow: hidden!important;
+    float: left!important;
+    background-color: #ff24f8c1 !important;
+    backdrop-filter: blur(20px) !important;
+    
+
+}
+/* ბანერი აქტიური */
+.anime-extention div.active{
+    display: block !important;
+}
+/* პოპაპი აქტიური */
+.anime-extention .popup.active{
+    display: flex !important;
+}
+
+.anime-extention .popup p{
+    font-family: "Arial GEO Bold", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    margin: 10px !important;
+    letter-spacing: 1px !important;
+    width: 100% !important;
+    height: 100% !important;
+    line-height: normal!important;
+}
+
+/* ტივტივის ანიმაცია */
+.floating { 
+    animation-name: floating !important;
+    animation-duration: 3s !important;
+    animation-iteration-count: infinite !important;
+    animation-timing-function: ease-in-out!important;
+}
+ 
+@keyframes floating {
+    0% { transform: translate(0,  0px) !important; }
+    50%  { transform: translate(0, 15px) !important; }
+    100%   { transform: translate(0, -0px) !important; }   
+}
