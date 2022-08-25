@@ -16,7 +16,7 @@
 ----
 * გახსენით ქრომი
 * გადადით more tools > extensions <br>
-ან  გადადით ლინკზე [ექსტენზიები](chrome://extensions/)
+ან  გადადით ლინკზე chrome://extensions/
 
 * ჩართეთ developer mode<br>
 * ჩააგდეთ ფოლდერი Gojo_satori
