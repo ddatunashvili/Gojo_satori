@@ -1,7 +1,7 @@
 ## Gojo satori
 ### ქრომის ანიმეების ექსტენზია, რომელიც რენდომად აგენერირებს ანიმეებს 
 ---
-<video src="intro.mp4" style="width:500px" type="video/mp4" autoplay></video>
+<img src="intro.gif" style="width:500px"></img>
 -----
 `მუშაობს შემდეგ ვებსაიტებზე:`
 * [File ge](http://file.ge)
