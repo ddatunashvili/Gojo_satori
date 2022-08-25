@@ -9,20 +9,25 @@
     margin: 0 !important;
     box-sizing: border-box !important;
 }
+
 /* ზედა ლეიერზე დასმული ჩარჩო */
 .anime-extention .banner{
-    position: absolute !important;
+    position: fixed !important;
     z-index: 999999 !important;
     width: 260px !important;
-    top: 400px !important;
-    left: 10px !important;
-    height: 540px !important;
+    top: 50%;
+    transform: translate(-97%,-50%);
+    min-height: 540px !important;
     background: #ee4a94b4!important;
     border-radius: 16px !important;
     box-shadow: 0 4px 30px #ee4a94 !important;
     backdrop-filter: blur(2.3px) !important;
+    transition: 0.2s all;
     border: 1px solid rgba(255, 35, 249, 0.3) !important;
-    
+}
+
+.anime-extention .banner:hover{
+    transform: translate(0,-50%);
 }
 /* სათაური */
 .anime-extention h1{
@@ -41,6 +46,7 @@
 /* ფოტოები */
 .anime-extention img{
     filter: grayscale(100%) !important;
+    position: relative;
     width: 128px !important;
     height: 128px !important;
     transition: 0.4s !important;
@@ -68,8 +74,9 @@
     filter: brightness(0.9) contrast(1.9) ;  
     color: rgb(21, 5, 201) !important;
     text-align: center !important;
+    opacity: 0;
+    transition: 0.2s;
     text-decoration: none !important;
-    display: none !important;
     position: absolute !important;
     z-index: 100 !important;
     font-size: 35px !important;
@@ -86,13 +93,9 @@
     
 
 }
-/* ბანერი აქტიური */
-.anime-extention div.active{
-    display: block !important;
-}
 /* პოპაპი აქტიური */
-.anime-extention .popup.active{
-    display: flex !important;
+.anime:hover  .popup{
+    opacity: 1
 }
 
 .anime-extention .popup p{

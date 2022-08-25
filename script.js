@@ -1,8 +1,6 @@
-
 // გვერდი რომ ჩაიტვირთება გაეშვას
-window.onload = (event) => {
-
-var html = `
+window.onload = () => {
+  var html = `
 <div class="anime-extention floating">
     <div class="banner">
           <h1>რენდომ ანიმე</h1>
@@ -10,82 +8,46 @@ var html = `
 
           </div>
     </div>
-</div>`
+</div>`;
 
-// html ჩასმა ბოდიში
-document.querySelector("body").innerHTML+= html
+  //აგენერერიებს რანდომ რიცხვს გადმოცემული მასივის სიგრძის მიხედვით
+  const randomNumber = (array) => {
+    const randomNumber = Math.floor(Math.random() * array.length);
 
+    return randomNumber;
+  };
 
+  //რისფონსად აბრუნებს სამ რანდომ ანიმეს API-დან
+  const fetchRandomAnimes = async () => {
+    const apis = [
+      "https://api.jikan.moe/v4/random/anime",
+      "https://api.jikan.moe/v4/random/anime",
+      "https://api.jikan.moe/v4/random/anime",
+    ];
 
+    const animes = await Promise.all(
+      apis.map(async (url) => {
+        const resp = await fetch(url);
+        return resp.json();
+      })
+    )
 
-// რენდომ sample. სიიდან რენდომად 3 ელემენტის ამოღება
-function getRandom(arr, n) {
-  var result = new Array(n),
-    len = arr.length,
-    taken = new Array(len);
-  if (n > len)
-    throw new RangeError("getRandom: more elements taken than available");
-  while (n--) {
-    var x = Math.floor(Math.random() * len);
-    result[n] = arr[x in taken ? taken[x] : x];
-    taken[x] = --len in taken ? taken[len] : len;
-  }
-  return result;
-}
+    return animes
+  };
 
-// ანიმეების სია
-var anime_list = [
-  {
-    name: "მაგიური ბრძოლა",
-    url: "file.ge",
-    pic: "https://geomovie.ge/uploads/posts/2022-02/1643675879_1637230665_magiuri-brdzola-qartulad-anime-qartulad.webp",
-  },
-  {
-    name: "ვან პისი (ქართულად) / One Piece (qartulad)",
-    url: "file.ge",
-    pic: "https://mykadri.com/uploads/posts/2022-06/1654721759_one-piece-geo-poster.jpg",
-  },
-  {
-    name: "ბორუტო ქართულად / Boruto qartulad   ",
-    url: "file.ge",
-    pic: "https://mykadri.com/uploads/posts/2022-03/1648206877_boruto-poster.webp",
-  }
-];
+  // html ჩასმა ბოდიში
+  document.querySelector("body").innerHTML += html;
 
-// ანიმეების ამოღება
-var anime_list = getRandom(anime_list, 3);
+  const addFetchedAnimesInDOM = async () => {
+    const anime_list = await fetchRandomAnimes();
 
-// html ში ჩასმა ანიმეების
-var animes = document.querySelector(".animes");
-anime_list.forEach(function (anime) {
-  animes.innerHTML += `<div class="anime"><div class="popup"><p>${anime["name"]}</p></div><a href="${anime["url"]}"><img src='${anime["pic"]}' ></a> </div>`;
-});
+    anime_list.forEach((anime) => {
+      animes.innerHTML += `<div class="anime"><div class="popup"><p>${anime.data.title}</p></div><a href="${anime.data.url}" target="_blank"><img src='${anime.data.images.webp.image_url}' ></a> </div>`;
+    });
+  };
 
-// activate img 
-$(function () {
-  $(".anime ").mouseover(function (el) {
-    this.classList.add("active");
-    check();
-  });
-  $(".anime ").mouseleave(function (el) {
-    this.classList.remove("active");
-    this.querySelector(".popup");
-    check();
-  });
-});
+  addFetchedAnimesInDOM();
 
-// თუ ანიმე აქტივია პოპაპიც აქტივზე იყოს
-function check() {
-  var animes = document.querySelectorAll(".anime");
-  animes.forEach(function (el) {
-    try {
-      el.querySelector(".active .popup").classList.add("active");
-    } catch {
-        el.querySelector(".popup").classList.remove("active");
-    }
-
-  });
-}
-
-
-} // onload
+  // html ში ჩასმა ანიმეების
+  var animes = document.querySelector(".animes");
+}; // onload
