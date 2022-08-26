@@ -2,7 +2,7 @@
   "name": "GOJO - გოჯო სატორი",
   "version": "1.0",
   "options_page": "settings.html",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "action": {
     "default_title": "GOJO - გოჯო სატორი",
     "default_popup": "popup.html",
@@ -18,7 +18,7 @@
     "128": "icons/icon128.png"
   },
 
-  "description": "ბრაუზერის ავტომატიზაციისათვის",
+  "description": "ქრომის ანიმეების ექსტენზია, რომელიც რენდომად აგენერირებს ანიმეებს ",
   "content_scripts": [
     {
       "matches": ["<all_urls>"],

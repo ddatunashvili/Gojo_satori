@@ -3,11 +3,10 @@
 window.onload = (event) => {
 
 var html = `
-<div class="anime-extention floating">
+<div class="anime-extention floatingAnimation">
     <div class="banner">
           <h1>რენდომ ანიმე</h1>
           <div class="animes">
-
           </div>
     </div>
 </div>`
@@ -38,17 +37,17 @@ var anime_list = [
   {
     name: "მაგიური ბრძოლა",
     url: "file.ge",
-    pic: "https://geomovie.ge/uploads/posts/2022-02/1643675879_1637230665_magiuri-brdzola-qartulad-anime-qartulad.webp",
+    pic: "https://startv.ge/uploads/posts/2021-01/1610446819_attack-on-titan.webp",
   },
   {
     name: "ვან პისი (ქართულად) / One Piece (qartulad)",
     url: "file.ge",
-    pic: "https://mykadri.com/uploads/posts/2022-06/1654721759_one-piece-geo-poster.jpg",
+    pic: "https://startv.ge/uploads/posts/2021-01/1610446819_attack-on-titan.webp",
   },
   {
     name: "ბორუტო ქართულად / Boruto qartulad   ",
     url: "file.ge",
-    pic: "https://mykadri.com/uploads/posts/2022-03/1648206877_boruto-poster.webp",
+    pic: "https://startv.ge/uploads/posts/2021-01/1610446819_attack-on-titan.webp",
   }
 ];
 
@@ -89,3 +88,4 @@ function check() {
 
 
 } // onload
+
